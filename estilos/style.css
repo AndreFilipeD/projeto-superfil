@@ -17,7 +17,7 @@ html, body{
     background-repeat: no-repeat;
 }
 main{
-    padding-top: 10vh;
+    padding-top: 8vh;
 }
 div#container{
     width: 80vw;
@@ -45,14 +45,17 @@ div.entrada > h1{
     font-size: 4vw;
     padding-bottom: 20px;
 }
-div.entrada> p{
-    display: inline-block;
-    
-}
-div.entrada > input/*[type='text']*/{
-    font-size: 3vw;
+div.entrada > input{
+    font-size: 2vw;
     background-color: rgba(35, 49, 49, 0.795);
     color: white;
-    padding-left: 40px;
+    padding: 8px;
     border-radius: 20px;
+}
+div.entrada > input#name{
+    width: 220px;
+    margin-right: 40px;
+}
+div.entrada > input#idade{
+    width: 60px;
 }
