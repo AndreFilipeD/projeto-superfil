@@ -31,17 +31,49 @@ body{
     transition: .4s;
 }
 main{
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.500);
 
-    width: 80%;
+    padding: 15px;
+
+    width: fit-content;
     height: 50%;
 
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.329);
-    border-radius: 3px;
+    border-radius: 9px;
 
     transition: 1s;
 
     border: 5px solid rgba(255, 255, 255, 0.3);
+}
+.formblock{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: 15px;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+}
+.formitem{
+    display: flex;
+    justify-content: space-evenly;
+}
+.labelmodel{
+    padding-top: 5px;
+    padding-left: 10px;
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: white;
+}
+.inputmodel{
+    padding-right: 10px;
+    margin-left: 9px;
+    margin-top: 9px;
+    height: 28px;
+    background-color: rgba(128, 128, 128, 0.100);
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: 1.1em;
+    border-radius: 6px;
+    padding: 6px;
 }
 #mainbutton{
     display: flex;
@@ -49,14 +81,14 @@ main{
     align-items: center;
 
     margin-top: 20px;
-    width: 20%;
-    height: 10%;
+    width: 150px;
+    height: 50px;
 
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.329);
 
-    background-color: gray;
+    background-color: rgba(128, 128, 128, 0.500);
     border: 5px solid rgba(255, 255, 255, 0.3);
-    border-radius: 3px;
+    border-radius: 9px;
 
     transition: 0.8s;
 }
@@ -66,12 +98,15 @@ main{
     font-weight: bolder;
 }
 #mainbutton:hover{
-    background-color: rgb(156, 156, 156);
+    background-color: rgba(153, 153, 153, 0.5);
     cursor: pointer;
     transition: 0.4s;
 }
 #git{
     margin-top: 20px;
+}
+#git:hover{
+    border-radius: 50px;
 }
 #git > img{
     padding: 2px;
