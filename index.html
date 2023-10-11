@@ -6,22 +6,45 @@
     <title>s perfil</title>
     <link rel="stylesheet" href="estilos/style.css">
 </head>
-<body>
+<body onload="start()">
     <h1 id="stitulo">s.Perfil</h1>
     <main>
-        <div class="formblock">
-            <div class="formitem">
-                <label class="labelmodel" for="ipnome">1° nome:</label>
-                <input class="inputmodel" type="text" name="nome" id="ipnome" size="7" placeholder="Ex: Smith">
+        <div id="create">
+            <div class="formblock">
+                <div class="formitem">
+                    <label class="labelmodel" for="ipnome">1° Nome:</label>
+                    <input class="inputmodel" type="text" name="nome" id="ipnome" size="7" placeholder="Ex: Smith">
+                </div>
+                <div class="formitem">
+                    <label class="labelmodel" for="ipsnome">Restante:</label>
+                    <input class="inputmodel" type="text" name="nome" id="ipsnome" placeholder="Ex: Weber Jagger Man Jensen" size="22">
+                </div>
             </div>
-            <div class="formitem">
-                <label class="labelmodel" for="ipnome">Restante:</label>
-                <input class="inputmodel" type="text" name="nome" id="ipnome" placeholder="Ex: Weber Jagger Man Jensen" size="22">
+            <div class="formblock">
+                <div class="formitem">
+                    <label for="imasc" class="labelmodel" >Masculino:</label>
+                    <input type="radio" name="genero" id="imasc" class="inputmodel" checked="check">
+                </div>
+                <div class="formitem">
+                    <label for="ifemi" class="labelmodel">Feminino:</label>
+                    <input type="radio" name="genero" id="ifemi" class="inputmodel">
+                </div>
+                <div class="formitem">
+                    <label for="iothe" class="labelmodel">Outro:</label>
+                    <input type="radio" name="genero" id="iothe" class="inputmodel">
+                </div>
             </div>
         </div>
+        <div id="sperfil">
+            <div class="formblock">
+                <img class="agepic" src="imagens/age/man.png" alt="gender">
+                <h1 id="mainame" class="mainamec">Placeholder</h1><h1 class="mainamec">,</h1>
+            </div>
+            <h1 id="secname">Placeholder Placeholder</h1>
+        </div>
     </main>
-    <div id="mainbutton">
-        <p>Confirm</p>
+    <div id="mainbutton" onclick="change()">
+        <p>Confirmar</p>
     </div>
     <a href="https://github.com/AndreFilipeD" id="git" target="_blank"><img src="imagens/others/git.png" alt="git"></a>
 <script src="script/script.js"></script>
