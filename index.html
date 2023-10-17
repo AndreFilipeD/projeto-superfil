@@ -13,34 +13,84 @@
             <div class="formblock">
                 <div class="formitem">
                     <label class="labelmodel" for="ipnome">1° Nome:</label>
-                    <input class="inputmodel" type="text" name="nome" id="ipnome" size="7" placeholder="Ex: Smith">
+                    <input class="inputmodel" type="text" name="nome" id="ipnome" size="7" placeholder="Ex: Smith" value="Testavel">
                 </div>
                 <div class="formitem">
                     <label class="labelmodel" for="ipsnome">Restante:</label>
-                    <input class="inputmodel" type="text" name="nome" id="ipsnome" placeholder="Ex: Weber Jagger Man Jensen" size="22">
+                    <input class="inputmodel" type="text" name="nome" id="ipsnome" placeholder="Ex: Weber Jagger Man Jensen" size="22" value="Teste dos testes">
                 </div>
             </div>
             <div class="formblock">
                 <div class="formitem">
-                    <label for="imasc" class="labelmodel" >Masculino:</label>
-                    <input type="radio" name="genero" id="imasc" class="inputmodel" checked="check">
+                    <input type="radio" name="genero" id="imasc" onclick="clgender()" class="inputmodel" checked="check">
+                    <label for="imasc" class="labelmodel" >Masculino</label>
                 </div>
                 <div class="formitem">
-                    <label for="ifemi" class="labelmodel">Feminino:</label>
-                    <input type="radio" name="genero" id="ifemi" class="inputmodel">
+                    <input type="radio" name="genero" id="ifemi" onclick="clgender()" class="inputmodel">
+                    <label for="ifemi" class="labelmodel">Feminino</label>
                 </div>
                 <div class="formitem">
-                    <label for="iothe" class="labelmodel">Outro:</label>
-                    <input type="radio" name="genero" id="iothe" class="inputmodel">
+                    <input type="radio" name="genero" id="iothe" onclick="opgender()" class="inputmodel">
+                    <label for="iothe" class="labelmodel">Outro</label>
+                </div>
+                <div class="formitem" id="ehgen">
+                    <label class="labelmodel" for="igen">Genero:</label>
+                    <input class="inputmodel" type="text" name="egenero" id="igen" placeholder="Ex: Transgenero" size="10">
+                </div>
+            </div>
+            <div class="lastformblock">
+                <div class="formitem">
+                    <label class="labelmodel" for="idade" style="margin-top: 6px;">Idade:</label>
+                    <input id="idade" class="inputmodel" type="number" placeholder="ex: 25" style="width: 80px;margin-top: 16px;" value="10">
+                </div>
+                <div class="formitem" >
+                    <select name="job" id="revitem">
+                        <option value="">--Especialização</option>
+                        <option value="arte">Artes</option>
+                        <option value="admin">Administração</option>
+                        <option value="atle">Atleta</option>
+                        <option value="autom">Automação</option>
+                        <option value="arqui">Arquitetura</option>
+                        <option value="alime">Alimenticio</option>
+                        <option value="biolo">Biologia</option>
+                        <option value="comun">Comunicação</option>
+                        <option value="enge">Engenharia</option>
+                        <option value="elet">Eletrônica</option>
+                        <option value="hist">História</option>
+                        <option value="inves">Investimento</option>
+                        <option value="info">Informática</option>
+                        <option value="logis">Logística</option>
+                        <option value="legis">Legislativo</option>
+                        <option value="medic">Medicina</option>
+                        <option value="mecan">Mecânica</option>
+                        <option value="marce">Marcenaria</option>
+                        <option value="mento">Mentoria</option>
+                        <option value="matem">Matemática</option>
+                        <option value="opera">Operacional</option>
+                        <option value="organ">Organização</option>
+                        <option value="psico">Psicologia</option>
+                        <option value="prog">Programação</option>
+                        <option value="quim">Quimica</option>
+                        <option value="segur">Segurança</option>
+                        <option value="venda">Vendas</option>
+                    </select>
                 </div>
             </div>
         </div>
         <div id="sperfil">
-            <div class="formblock">
-                <img class="agepic" src="imagens/age/man.png" alt="gender">
-                <h1 id="mainame" class="mainamec">Placeholder</h1><h1 class="mainamec">,</h1>
+            <div class="formshow">
+                <h1 id="reverencia">test</h1>
+            </div>
+            <div class="formshow">
+                <h1 id="mainame" class="mainamec">Placeholder</h1><!-- <h1 class="mainamec">,</h1> -->
             </div>
             <h1 id="secname">Placeholder Placeholder</h1>
+            <div class="formshow">
+                <img id="gendericon" class="perficon" src="imagens/gender/male.png" alt="gender">
+                <h1 id="gendername">gn</h1>
+                <img id="imageicon" class="perficon" src="imagens/age/man.png" alt="age">
+                <h1 id="mostraidade" style="display: inline;">00</h1>
+            </div>
         </div>
     </main>
     <div id="mainbutton" onclick="change()">
