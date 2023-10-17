@@ -1,3 +1,5 @@
+var d = new Date()
+var hora = window.document.querySelector("#hora")
 var create = window.document.querySelector("#create")
 var sperfil = window.document.querySelector("#sperfil")
 var mainame = window.document.querySelector("#mainame")
@@ -7,6 +9,7 @@ var imggender = window.document.querySelector("#gendericon")
 var imgicon = window.document.querySelector("#imageicon")
 var idade = window.document.querySelector("#mostraidade")
 var gendername = window.document.querySelector("#gendername")
+var botalterna = window.document.querySelector("#botaoalterna")
 
 var reverencia = window.document.querySelector("#reverencia")
 var revitem = document.getElementById("revitem");
@@ -28,6 +31,24 @@ function clgender(){
 }
 function opgender(){
     genelement.style="display: block"
+}
+function autonamesize(){
+    
+    mainame.innerHTML = inputname + ','
+    if((mainame.innerHTML.length-1)>10){
+        if((mainame.innerHTML.length-1)>20){
+            mainame.style="font-size: 2em; margin-top:-15px"
+        }else{
+            mainame.style="font-size: 4em; margin-top:-25px"
+        }
+    }else{
+        if((mainame.innerHTML.length-1)<6){
+            mainame.style="font-size: 9.6em"
+        }else{
+            mainame.style="font-size: 6.6em"
+        }
+    }
+    
 }
 
 function reverenciar(){
@@ -74,11 +95,11 @@ function reverenciar(){
             break; /*------------------------*/
         case 'opera': reverencia.innerHTML = 'Operador(a)';
             break;
-        case 'organ': reverencia.innerHTML = 'Chefe(a)';
+        case 'organ': reverencia.innerHTML = 'Inspetor(a)';
             break;
         case 'psico': reverencia.innerHTML = 'Doutor(a)';
             break;
-        case 'prog': reverencia.innerHTML = 'Mestre(a)';
+        case 'prog': reverencia.innerHTML = 'Desenvolvedor(a)';
             break;
         case 'quim': reverencia.innerHTML = 'Criador(a)';
             break;
@@ -126,29 +147,32 @@ function iconegenero(){
         gendername.innerHTML = window.document.querySelector("#igen").value
     }
 }
+function botalt(){
+    page ? botalterna.innerHTML='Voltar' : botalterna.innerHTML='Confirmar'
+}
 
 function change(){
     page = !page;
+    botalt()
     if(page){
-
         create.style="display:none"
         sperfil.style="display:block"
 
-        inputname = window.document.querySelector("#ipnome").value
-        mainame.innerHTML = inputname + ','
+        d = new Date()
+        hora.innerHTML = d.getHours()+':'+d.getMinutes()
 
         inputsecname = window.document.querySelector("#ipsnome").value
-        secname.innerHTML = inputsecname
-
+        secname.innerHTML = inputsecname + '.'
+        inputname = window.document.querySelector("#ipnome").value
         idade.innerHTML = window.document.querySelector("#idade").value + ' Anos'
-
+        
+        autonamesize()
         reverenciar()
         iconegenero()
         iconeidade()
-        
     }else{
-        create.style="display:block"
-        sperfil.style="display:none"
+        create.style="display:block;"
+        sperfil.style="display:none;"
     }
 }
 
