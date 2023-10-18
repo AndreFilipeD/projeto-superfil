@@ -19,13 +19,13 @@ body{
 }
 #stitulo{
     color: rgba(255, 255, 255, 0.863);
-    font-size: 6em;
+    font-size: 4em;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.400);
     transition: .8s;
 }
 #stitulo:hover{
     color: rgba(255, 255, 255, 0.863);
-    font-size: 6em;
+    font-size: 4.05em;
     text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.800);
     cursor: pointer;
     transition: .4s;
@@ -139,7 +139,8 @@ input[type='radio'] {
 #reverencia{
     margin-top: -10px;
     font-size: 1.8em;
-    color: rgba(211, 211, 211, 0.788);
+    color: rgba(223, 223, 223, 0.788);
+    text-shadow: 0px 0px 30px rgba(34, 34, 34, 0.678);
 }
 .mainamec{
     margin-top: -50px;
@@ -148,6 +149,7 @@ input[type='radio'] {
     text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.582);
 }
 #mostraidade{
+    margin-top: -20px;
     font-size: 3.5em;
     color: rgba(255, 255, 255, 0.904);
     text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.582);
@@ -159,12 +161,16 @@ input[type='radio'] {
     text-shadow: 0px 0px 30px rgba(34, 34, 34, 0.678);
 }
 #gendername{
-    margin-top: 20px;
     font-size: 1.8em;
     color: rgba(255, 255, 255, 0.877);
     text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.582);
 }
 .perficon{
+    width: 40px;
+    height: 40px;
+    filter: invert();
+}
+.perficonb{
     margin-top: 20px;
     width: 40px;
     height: 40px;
@@ -173,8 +179,8 @@ input[type='radio'] {
 #diahoje{
     text-align: center;
     font-weight: bolder;
-    margin-top: 20px;
-    font-size: 1em;
+    margin-top: 0px;
+    font-size: 1.6em;
     color: rgba(255, 255, 255, 0.877);
     text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.582);
 }
