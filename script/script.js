@@ -18,7 +18,9 @@ var inputname
 var inputsecname
 var revitem
 var validade
+var clockloop
 
+var bclock = true
 var page = true
 
 function start(){
@@ -52,62 +54,73 @@ function autonamesize(){
 }
 
 function reverenciar(){
+    if(d.getHours() >= 4 && d.getHours() <= 8){
+        reverencia.innerHTML = "Boa manhã, "
+    }else if(d.getHours() >= 9 && d.getHours() < 13){
+        reverencia.innerHTML = "Bom dia, "
+    }else if(d.getHours() >= 13 && d.getHours() < 19){
+        reverencia.innerHTML = "Boa tarde, "
+    }else if(d.getHours() >= 19 && d.getHours() <= 23){
+        reverencia.innerHTML = "Boa noite, "
+    }else if(d.getHours() >= 0 && d.getHours() < 5){
+        reverencia.innerHTML = "Boa madrugada, "
+    }
     switch(revitem.options[revitem.selectedIndex].value){
-        case 'arte': reverencia.innerHTML = 'Visionario(a)';
+        case 'arte': reverencia.innerHTML += 'Visionario(a)';
             break;
-        case 'admin': reverencia.innerHTML = 'Diretor(a)';
+        case 'admin': reverencia.innerHTML += 'Diretor(a)';
             break;
-        case 'atle': reverencia.innerHTML = 'Grande';
+        case 'atle': reverencia.innerHTML += 'Grande';
             break;
-        case 'autom': reverencia.innerHTML = 'Inventor(a)';
+        case 'autom': reverencia.innerHTML += 'Inventor(a)';
             break;
-        case 'arqui': reverencia.innerHTML = 'Projetista';
+        case 'arqui': reverencia.innerHTML += 'Projetista';
             break;
-        case 'alime': reverencia.innerHTML = 'Chef';
+        case 'alime': reverencia.innerHTML += 'Chef';
             break;
-        case 'biolo': reverencia.innerHTML = 'Cientista';
+        case 'biolo': reverencia.innerHTML += 'Cientista';
             break;
-        case 'comun': reverencia.innerHTML = 'Diplomata';
+        case 'comun': reverencia.innerHTML += 'Diplomata';
             break;
-        case 'enge': reverencia.innerHTML = 'Chefe(a)';
+        case 'enge': reverencia.innerHTML += 'Chefe(a)';
             break;
-        case 'elet': reverencia.innerHTML = 'Tecnico(a)';
+        case 'elet': reverencia.innerHTML += 'Tecnico(a)';
             break;
-        case 'hist': reverencia.innerHTML = 'Pesquisador(a)';
+        case 'hist': reverencia.innerHTML += 'Pesquisador(a)';
             break;
-        case 'inves': reverencia.innerHTML = 'Empresario(a)';
+        case 'inves': reverencia.innerHTML += 'Empresario(a)';
             break;
-        case 'info': reverencia.innerHTML = 'Tecnico(a)';
+        case 'info': reverencia.innerHTML += 'Tecnico(a)';
             break;
-        case 'logis': reverencia.innerHTML = 'Tecnico(a)';
+        case 'logis': reverencia.innerHTML += 'Tecnico(a)';
             break;
-        case 'legis': reverencia.innerHTML = 'Excelentissimo(a)';
+        case 'legis': reverencia.innerHTML += 'Excelentissimo(a)';
             break;
-        case 'medic': reverencia.innerHTML = 'Doutor(a)';
+        case 'medic': reverencia.innerHTML += 'Doutor(a)';
             break;
-        case 'mecan': reverencia.innerHTML = 'Tecnico(a)';
+        case 'mecan': reverencia.innerHTML += 'Tecnico(a)';
             break;
-        case 'marce': reverencia.innerHTML = 'Artesão';
+        case 'marce': reverencia.innerHTML += 'Artesão';
             break;
-        case 'mento': reverencia.innerHTML = 'Mestre(a)';
+        case 'mento': reverencia.innerHTML += 'Mestre(a)';
             break;
-        case 'matem': reverencia.innerHTML = 'Genio(a)';
+        case 'matem': reverencia.innerHTML += 'Genio(a)';
             break; /*------------------------*/
-        case 'opera': reverencia.innerHTML = 'Operador(a)';
+        case 'opera': reverencia.innerHTML += 'Operador(a)';
             break;
-        case 'organ': reverencia.innerHTML = 'Inspetor(a)';
+        case 'organ': reverencia.innerHTML += 'Inspetor(a)';
             break;
-        case 'psico': reverencia.innerHTML = 'Doutor(a)';
+        case 'psico': reverencia.innerHTML += 'Doutor(a)';
             break;
-        case 'prog': reverencia.innerHTML = 'Desenvolvedor(a)';
+        case 'prog': reverencia.innerHTML += 'Desenvolvedor(a)';
             break;
-        case 'quim': reverencia.innerHTML = 'Criador(a)';
+        case 'quim': reverencia.innerHTML += 'Criador(a)';
             break;
-        case 'segur': reverencia.innerHTML = 'Senhor(a)';
+        case 'segur': reverencia.innerHTML += 'Senhor(a)';
             break;
-        case 'venda': reverencia.innerHTML = 'Consultor(a)';
+        case 'venda': reverencia.innerHTML += 'Consultor(a)';
             break;
-        default: reverencia.innerHTML = 'Nobre'
+        default: reverencia.innerHTML += 'Prezado(a)'
     }
     
 }
@@ -150,7 +163,15 @@ function iconegenero(){
 function botalt(){
     page ? botalterna.innerHTML='Voltar' : botalterna.innerHTML='Confirmar'
 }
-
+function clock(){
+    d = new Date()
+    bclock = !bclock
+    if(bclock){
+        hora.innerHTML = (d.getHours()<10?'0'+d.getgetHours():d.getHours())+':'+(d.getMinutes()<10?'0'+d.getMinutes():d.getMinutes())
+    }else{
+        hora.innerHTML = (d.getHours()<10?'0'+d.getgetHours():d.getHours())+' '+(d.getMinutes()<10?'0'+d.getMinutes():d.getMinutes())
+    }
+}
 function change(){
     page = !page;
     botalt()
@@ -158,14 +179,14 @@ function change(){
         create.style="display:none"
         sperfil.style="display:block"
 
-        d = new Date()
-        hora.innerHTML = d.getHours()+':'+d.getMinutes()
-
         inputsecname = window.document.querySelector("#ipsnome").value
         secname.innerHTML = inputsecname + '.'
         inputname = window.document.querySelector("#ipnome").value
         idade.innerHTML = window.document.querySelector("#idade").value + ' Anos'
-        
+
+        clock()/* -Hora atualizando em tempo real- */
+        clockloop = setInterval(clock, 500);
+
         autonamesize()
         reverenciar()
         iconegenero()
@@ -173,6 +194,7 @@ function change(){
     }else{
         create.style="display:block;"
         sperfil.style="display:none;"
+        clearInterval(clockloop)
     }
 }
 
