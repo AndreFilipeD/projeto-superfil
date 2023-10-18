@@ -7,9 +7,11 @@ var secname = window.document.querySelector("#secname")
 var genelement = window.document.querySelector("#ehgen")
 var imggender = window.document.querySelector("#gendericon")
 var imgicon = window.document.querySelector("#imageicon")
+var imgdate = window.document.querySelector("#dateicon")
 var idade = window.document.querySelector("#mostraidade")
 var gendername = window.document.querySelector("#gendername")
 var botalterna = window.document.querySelector("#botaoalterna")
+var diahoje = window.document.querySelector("#diahoje")
 
 var reverencia = window.document.querySelector("#reverencia")
 var revitem = document.getElementById("revitem");
@@ -31,9 +33,11 @@ function start(){
 function clgender(){
     genelement.style="display: none"
 }
+
 function opgender(){
     genelement.style="display: block"
 }
+
 function autonamesize(){
     
     mainame.innerHTML = inputname + ','
@@ -160,9 +164,11 @@ function iconegenero(){
         gendername.innerHTML = window.document.querySelector("#igen").value
     }
 }
+
 function botalt(){
     page ? botalterna.innerHTML='Voltar' : botalterna.innerHTML='Confirmar'
 }
+
 function clock(){
     d = new Date()
     bclock = !bclock
@@ -171,7 +177,45 @@ function clock(){
     }else{
         hora.innerHTML = (d.getHours()<10?'0'+d.getgetHours():d.getHours())+' '+(d.getMinutes()<10?'0'+d.getMinutes():d.getMinutes())
     }
+
+    if((d.getHours()>18 && d.getHours()<=23)||(d.getHours()>=0 && d.getHours()<5)){
+        imgdate.setAttribute('src','imagens/daily/night.png')
+    }else if((d.getHours()>4 && d.getHours()<=6)||(d.getHours()>4 && d.getHours()<=6)){
+        imgdate.setAttribute('src','imagens/daily/sunset.png')
+    }else{
+        imgdate.setAttribute('src','imagens/daily/day.png')
+    }
 }
+
+function daynow(){
+    d = new Date()
+    
+    switch(d.getDay()){
+        case 0:
+            diahoje.innerHTML = "Domingo"
+            break;
+        case 1:
+            diahoje.innerHTML = "Segunda-Feira"
+            break;
+        case 2:
+            diahoje.innerHTML = "Terça-Feira"
+            break;
+        case 3:
+            diahoje.innerHTML = "Quarta-Feira"
+            break;
+        case 4:
+            diahoje.innerHTML = "Quinta-Feira"
+            break;
+        case 5:
+            diahoje.innerHTML = "Sexta-Feira"
+            break;
+        case 6:
+            diahoje.innerHTML = "Sabado"
+            break;
+    }
+    diahoje.innerHTML += "<br>"+d.getDate()+"/"+((d.getMonth())+1)+"/"+d.getFullYear()
+}
+
 function change(){
     page = !page;
     botalt()
@@ -186,6 +230,7 @@ function change(){
 
         clock()/* -Hora atualizando em tempo real- */
         clockloop = setInterval(clock, 500);
+        daynow()
 
         autonamesize()
         reverenciar()
