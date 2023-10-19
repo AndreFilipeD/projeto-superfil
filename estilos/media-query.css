@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+@media screen and /*(min-width: 768px) and */(max-width: 768px){
+    main{
+        width: 100%;
+        border: 10px solid rgba(255, 255, 255, 0.3);
+        border-left: none;
+        border-right: none;
+        padding: 20px;
+        border-radius: 0px;
+    }
+    #mainbutton{
+        border: 10px solid rgba(255, 255, 255, 0.3);
+        margin-top: 20px;
+        width: 200px;
+        height: 75px;
+    }
+    #mainbutton > p{
+        color: white;
+        font-size: 2em;
+        font-weight: bolder;
+    }
+    .labelmodel{
+        padding-top: 15px;
+        padding-left: 15px;
+        font-weight: bolder;
+        font-size: 1.5em;
+        color: white;
+    }
+    .inputmodel{
+        padding-right: 10px;
+        margin-left: 9px;
+        margin-top: 9px;
+        height: 28px;
+        background-color: rgba(128, 128, 128, 0.100);
+        color: rgb(255, 255, 255);
+        font-weight: bolder;
+        font-size: 1.1em;
+        border-radius: 6px;
+        padding: 6px;
+    }
+}
+@media screen and (min-width: 992px){
+    
+}
